@@ -1,0 +1,48 @@
+<!-- .slide: class="layout-2x1" -->
+
+## Method
+
+#### Generative Radiance Fields
+
+<div class="column-1 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <div class="flex-col">
+        <img class="img-inline" style="vertical-align: middle" width=1800px src="gfx/related/network3.svg" />
+    </div>
+</div>
+
+<div class="column-2 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <ul>
+        <li> Generator/discriminator for <strong>image patches</strong> of size $ 32 \times 32 $ pixels</li>
+        <li> Patches sampled at <strong> random scale </strong> using dilation </li>
+    </ul>
+</div>
+
+<aside class="notes">
+	<ul>
+		<li> Here, you can see an overview over our architecture used for generative radiance fields </li>
+		<li> In general, we adopt standard GAN training using a generator network to generate images (blue) and a discriminator network to distinguish between training images and generated images (red). </li>
+        <li> I will walk you through our approach step by step, starting from the left and finishing at the right </li>
+        <li> Before we start: Let me remind of our goal here: learn to generate a 3D representation of an object so we can render it to images from arbitrary camera viewpoints</li>
+        <li> We model the camera with a virtual pinhole camera model. </li>
+        <li> (ZOOM) First thing we do in our pipeline is to randomly sample a camera viewpoint, denoted by xi here. </li>
+        <li> Together with camera intrinsics K that gives us the camera rays. That means that from each pixel of the camera we shoot a ray into 3D space. </li>
+        <li> Doing this for every pixel of the camera grid is not very memory efficient, so in practice we select a fixed number of rays according to patch patterns as you can see here (point).
+            To consider coarse and fine structures in the images we sample patches at random scale by controlling the dilation of the patch which corresponds to the spacing of the pattern. </li>
+        <li> The next steps are similarly done for every ray, so in the following let's just focus on one single ray. </li>
+        <li> Recall, that a radiance field is a function that maps a 3D location and a viewing direction to a color value. </li>
+        <li> The viewing direction we already know, because it is simply the direction of the ray. </li>
+        <li> The 3D locations are obtained by sampling points on this ray, which is shown here (point). </li>
+        <li> So this gives us the 3D location and viewing direction as input to the radiance field. </li>
+        <li> Using this as input only, we could represent exactly one radiance field corresponding to a single object.
+            But we want to generate various objects so we need to include some variation in our input. </li>
+        <li> This is why we condition our radiance field on 2 random noise vectors, one to control the shape and one for the appearance of the objects. </li>
+        <li> So our !conditional! radiance field maps 3D location, a viewing direction and 2 noise vectors to a color value c and a volume density sigma. </li>
+        <li> Okay, now we have a color and a density value for each point along our ray.
+            We composite them to a single pixel color value using volume rendering techniques. Note, that this rendering does not involve any learnable parameters. </li>
+		<li> In fact, the conditional radiance field is the only component in our generator with learnable parameters, as we parameterize it as a fully connected neural network. </li>
+        <li> Repeating this procedure for each of the selected rays produces a patch of pixel color values. </li>
+        <li> Our discriminator compares the predicted patches with patches sampled from the training images. </li>
+        <li> So we train our model using standard adversarial loss. </li>
+        <li> Let's look at some results! </li>
+    </ul>
+</aside>

@@ -1,0 +1,27 @@
+<!-- .slide: class="layout-1x1" -->
+
+## Experiments
+
+#### Generated Depth
+
+<div class="column-1">
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 1em;">
+        <div style="text-align: left; flex-basis: 200px"> &nbsp; </div>
+        <video muted data-autoplay loop data-src="video/results/carla_256.mp4" width=75% height=75% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 1em;">
+        <div style="text-align: left; flex-basis: 200px"> &nbsp; </div>
+        <video muted data-autoplay loop data-src="video/results/carla_256_depth.mp4" width=75% height=75% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 1em;">
+        <div style="text-align: right; font-size: 40px; flex-basis: 500px"> $ 256 \times 256 $</div>
+    </div>
+</div>
+
+<aside class="notes">
+	<ul>
+		<li> Nice by-product of our approach is that we also get a depth prediction because we learn a 3D representation of the full object.</li>
+        <li> This is not possible for HoloGAN </li>
+        <li> As we show here, our depth predictions are quite good even though we trained using unposed RGB-images only. </li>
+     </ul>
+</aside>

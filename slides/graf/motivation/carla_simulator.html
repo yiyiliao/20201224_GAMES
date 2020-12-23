@@ -1,0 +1,40 @@
+<!-- .slide: class="layout-2x1" -->
+
+## Motivation 
+
+#### CARLA Simulator
+
+<div class="column-1 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <div class="flex-col">
+        <video muted data-autoplay loop data-src="video/motivation/CARLA_cut.mkv" width=90% height=90%></video>
+    </div>
+    <div style="position: absolute; top: 780px; left: -100px; font-size:35px"> Dosovitskiy, Ros, Codevilla, Lopez, Koltun: <em>CARLA: An open urban driving simulator</em>. CoRL, 2017 </div>
+    <div class="flex-col">
+       <ul class="pro-contra" style="padding-left: 2em">
+            <li class="pro fragment">Labels directly available</li>
+            <li class="contra fragment"> Big design effort </li>
+            <li class="contra fragment"> Not entirely photo-realistic </li>
+    </ul>
+    </div>
+</div>
+
+<div class="column-2 flex-row" style="justify-content: flex-start; align-items: flex-start; margin-left: 4em; margin-bottom: 2em">
+    <div class="emphbox flex-row fragment" width=100% style="margin-left: 0.1em; margin-right: 0.1em; align-items: flex-start">
+        <div> <strong>Goal:</strong> </div>
+        <div>&nbsp <u> Learn</u> photo-realistic simulator from data </div>
+    </div>
+</div>
+
+<aside class="notes">
+	<ul>
+		<li> Simulation can play essential role in collecting training data for our models </li>
+		<li> The idea is to use computer graphics to create data and labels </li>
+		<li> (KLICK) This has many advantages as we have explicit control over the created data, for example to synthesize rare scenarios, different sensor modalities, different domains like day and night, or rain and sun.
+            Further, labels can be rendered directly from the simulator, resolving the need for costly annotations by humans </li>
+		<li> Here I show a video of the latest release of Carla, where a new town for driving is introduced. As you can see from the video the environment is modeled with a lot of detailed and good visual quality</li>
+		<li> (KLICK) But, there is no free lunch - instead of labeling costs we now face a big design effort to create these 3D environments.</li>
+		<li> For example, the Carla team initially consisted of ~30 people, with a large proportion of graphic designers </li>
+		<li> (KLICK) While Carla already includes many details, the simulation is not entirely photo-realistic, creating a delta between real and synthetic data </li>
+		<li> (KLICK) Thus, our ultimate goal is to !learn! a photo-realistic simulator with a data driven approach </li>
+	</ul>
+</aside>

@@ -1,0 +1,29 @@
+<!-- .slide: class="layout-1x1" -->
+
+## Experiments
+
+#### Scalability to High Resolution
+
+<div class="column-1">
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 1em;">
+        <div style="text-align: left; flex-basis: 200px"> HoloGAN </div>
+        <video muted data-autoplay loop data-src="video/results/carla_HoloGAN_256.mp4" width=75% height=75% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 1em;">
+        <div style="text-align: left; flex-basis: 200px"> Ours </div>
+        <video muted data-autoplay loop data-src="video/results/carla_256_rotonly.mp4" width=75% height=75% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 1em;">
+        <div style="text-align: right; font-size: 40px; flex-basis: 500px"> $ 256 \times 256 $</div>
+    </div>
+</div>
+<aside class="notes">
+	<ul>
+		<li> Results on images of size 256 by 256 </li>
+        <li> Interestingly, HoloGAN does not disentangle camera viewpoint and object identity properly at higher resolution.</li>
+        <li> Our experiments in the paper indicate that this comes from the learnable projection used in HoloGAN </li>
+   		<li> Intuitively, the supervision signal only encourages realistic images but gives no supervision to disentangle camera pose and object identity.
+            Therefore, a learned 3D to 2D mapping can modify the 3D feature as long as the results look like realistic images. Therefore, HoloGAN can learn to ignore the camera pose as it does here, for the rotation.
+        </li>
+     </ul>
+</aside>

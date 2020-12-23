@@ -1,0 +1,126 @@
+
+<!-- .slide: class="layout-2x1" -->
+
+## Method  
+
+<div class="column-1 flex-col">
+    <img src="gfx/architecture/network.svg" width="90%">
+</div>
+
+---
+
+
+<!-- .slide: class="layout-2x1" -->
+
+## Method
+
+<div class="column-1 flex-col">
+    <img src="gfx/architecture/network_01.svg" width="90%">
+</div>
+<div class="column-2 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <ul>
+        <li>Foreground/background primitives: $\{\mathbf{o}_1,\dots,\mathbf{o}_N,\mathbf{o}_{bg}\}$</li>
+        <li>Each primitive represented by $\mathbf{o}_i = (\mathbf{R}_i, \mathbf{t}_i, \mathbf{s}_i, \phi_i)$</li>
+    </ul>
+</div>
+
+<aside class="notes">
+    we use 3D representations which we call "primitives"
+</aside>
+
+
+<!-- ## 3D Generator 
+
+<div class="column-1 flex-col">
+    <img src="gfx/architecture/3d_generator.svg" width="65%">
+</div> -->
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Method
+
+<div class="column-1 flex-col">
+    <img src="gfx/architecture/network_02.svg" width="90%">
+</div>
+<div class="column-2 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <ul>
+        <li> Render each primitive individually </li>
+        <li> Obtain feature map $\mathbf{X}$, alpha map $\mathbf{A}$ and depth map $\mathbf{D}$ </li>
+    </ul>
+</div>
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Method 
+
+<div class="column-1 flex-col">
+    <img src="gfx/architecture/network_03.svg" width="90%">
+</div>
+<div class="column-2 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <ul>
+        <li> Convert features to RGB pixel values </li>
+        <li> Render to image via alpha composition (based on depth ordering) </li>
+    </ul>
+</div>
+
+<!--<div class="column-1 flex-col">
+    <img src="gfx/architecture/2d_generator_short.svg" width="70%">
+</div> -->
+
+<!--<div class="column-1 flex-col">
+    <img src="gfx/method/alpha_composition.png" width="60%">
+</div> -->
+
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Loss Functions 
+
+<div class="column-1 flex-col">
+    <img src="gfx/architecture/network_04_01.svg" width="90%">
+</div>
+<div class="column-2 flex-col">
+    <div style="font-size: .8em">
+	\[ \mathcal L_{adversarial}(\theta, \psi,c) = \mathbb E_{p(\mathbf z)} [f(d_\psi(g_\theta(\mathbf z,c), c)) ] 
+	   + \mathbb E_{p_{\mathcal D}(\mathbf I|c)} [f(-d_\psi(\mathbf I, c))] \]
+    </div>
+</div>
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Loss Functions 
+
+<div class="column-1 flex-col">
+    <img src="gfx/architecture/network_04_03.svg" width="90%">
+</div>
+<div class="column-2 flex-col">
+    <div style="font-size: .8em">
+	$$\mathcal L_{compactness}(\theta) = \mathbb E_{p(\mathbf z)} \left[ \sum_{i=1}^N\max\left(\tau, \frac{{\Vert \mathbf A_i \Vert}_{1}}{H\times W} \right) \right]$$
+    </div>
+</div>
+
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Loss Functions 
+
+<div class="column-1 flex-col">
+    <img src="gfx/architecture/network_04_02.svg" width="90%">
+</div>
+<div class="column-2 flex-col">
+    <div style="font-size: .8em">
+	$$\mathcal L_{geometric}(\theta)  = \mathbb E_{p(\mathbf z)} \left[\sum_{i=1}^N {\Vert \mathbf A'_i \odot (\mathbf X'_i - \tilde{\mathbf X}'_i)\Vert}_1 \right]
+           + \mathbb E_{p(\mathbf z)}\left[ \sum_{i=1}^N{\Vert\mathbf A'_i \odot (\mathbf D'_i - \tilde{\mathbf D}'_i)\Vert}_1\right] $$
+    </div>
+</div>
+

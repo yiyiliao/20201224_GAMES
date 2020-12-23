@@ -1,0 +1,73 @@
+<!-- .slide: class="layout-1x2" -->
+
+## Motivation 
+
+#### What needs to be learned?
+
+<div class="column-1 flex-row">
+    <p class="fragment fade-out" data-fragment-index="1">
+        <img src="gfx/motivation/motivation_graph.svg" style="position: absolute; top: 80px; left: 100px;" width="400%">
+    </p>
+    <p class="fragment fade-in-then-out" data-fragment-index="1">
+        <img src="gfx/motivation/motivation_graph_scene.svg" style="position: absolute; top: 80px; left: 100px;" width="400%">
+    </p>
+</div>
+
+<div class="column-2 flex-row">
+    <div class="flex-col">
+        <div class="fragment fade-in-then-out" data-fragment-index="1" style="position: relative; top: -20%;">
+            <div> <video data-autoplay loop data-src="video/motivation/cvpr2020_cam.mp4"></video> </div>
+        </div>
+    </div>
+    <div class="flex-col">
+        <div class="fragment fade-in-then-out" data-fragment-index="1" style="position: relative; top: -10%;">
+	    <div> <video data-autoplay loop data-src="video/motivation/cvpr2020_results.mp4"></video> </div>
+        </div>
+    </div>
+    <div class="fragment fade-in-then-out" data-fragment-index="1">
+        <p style="text-align: left; position: absolute; top: 600px; left: 0px; font-size:35px"> Liao, Schwarz, Mescheder, Geiger: <br><em>Towards unsupervised learning of generative models for 3d controllable image synthesis</em>. <br>CVPR, 2020 </p>
+    </div>
+</div>
+
+---
+
+<!-- .slide: class="layout-1x2" -->
+
+## Motivation
+
+#### What needs to be learned?
+
+<div class="column-1 flex-row">
+    <img src="gfx/motivation/motivation_graph_objects.svg" style="position: absolute; top: 80px; left: 100px;" width="400%">
+</div>
+
+<div class="column-2 flex-row" >
+    <div class="flex-col">
+         <div> <video data-autoplay loop data-src="video/motivation/carla_512_3.mp4" width=75% style="position: relative; top: -20%";></video> </div>
+         <div> <video data-autoplay loop data-src="video/motivation/carla_512_2.mp4" width=75% style="position: relative; top: -40%;"></video> </div>
+    </div>
+    <div class="flex-col">
+        <div> <video data-autoplay loop data-src="video/motivation/carla_512_5.mp4" width=75% style="position: relative; top: -20%;"></video> </div>
+        <div> <video data-autoplay loop data-src="video/motivation/carla_512_4.mp4" width=75% style="position: relative; top: -40%;"></video> </div>
+    </div>
+    <p style="text-align: left; position: absolute; top: 600px; left: 0px; font-size:35px"> Schwarz, Liao, Niemeyer, Geiger: <br><em>GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis</em>. <br>Under review </p>
+</div>
+
+<aside class="notes">
+	<ul>
+		<li> So what exactly needs to be learned by such a simulator? </li>
+		<li> Let's start by breaking this complex task down into smaller steps</li>
+        <li> Optimally, we would like to learn from images or videos only, because otherwise we again face costly data labeling. </li>
+		<li> What we ultimately want to do is to simulate video sequences to create training data for our models </li>
+        <li> Thus, we have to learn physical motion, such as trajectories of objects </li>
+		<li> Before we can do this we need to approach static scenes.
+            Here, the compositional nature of scenes and reasoning in 3D must be learned, for example to reason over occlusion relationships between objects.</li>
+		<li> (KLICK) In our lab we have done some initial work on this 3D-controllable image synthesis.
+            The goal for this work was to identify individual objects in the scene and to disentangle the camera viewpoint, learning from RGB-images only.
+        However, this is very challenging task as the network needs to learn reasoning in 3D from 2D images, only. </li>
+        <li> Thus, we decided to dig one level deeper and take a closer look at single objects. </li>
+        <li> The task is then to synthesize images in which camera viewpoint and object identity are disentangled, which we call "3D-aware image synthesis". </li>
+        <li> (KLICK) This is the project I will talk about today. The question being: Can we find a better representation for single objects learning from 2D images only? </li>
+        <li> First, let us consider how this is approached in previous works </li>
+    </ul>
+</aside>

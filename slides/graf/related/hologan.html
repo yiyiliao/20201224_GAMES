@@ -1,0 +1,45 @@
+<!-- .slide: class="layout-1x1" -->
+
+<div class="column-1 flex-col">
+    <center><h2>Is there a better 3D representation for </h2></center>
+    <center><h2> 3D controllable image synthesis?</h2></center>
+</div>
+<div style="position: absolute; bottom: 0px; left: 0px; font-size:30px"> Schwarz, Liao, Niemeyer, Geiger: GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis. NeurIPS, 2020</div>
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## 3D Representations
+
+#### 3D Latent Feature with Learnable Projection
+
+<div class="column-1 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <div class="flex-col">
+        <img class="img-inline" style="vertical-align: middle" width=1500px src="gfx/related/teaser_hgan.svg" />
+        <div class="cite" style="padding-top: 1em">HoloGAN [Nguyen et al., ICCV 2019]</div>
+    </div>
+    <div class="flex-col">
+        <video muted data-autoplay loop data-src="video/related/teaser_hgan.mp4" width=100% height=100% style="position: relative; top: -15%;"></video>
+    </div>
+</div>
+
+<div class="column-2 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <ul class="pro-contra" style="padding-left: 2em">
+        <li class="pro"> High image fidelity </li>
+        <li class="contra"> Object identity may vary with viewpoint due to learnable projection </li>
+    </ul>
+</div>
+
+<aside class="notes">
+	<ul>
+		<li> One state-of-the-art method for 3D-aware image synthesis is HoloGAN.</li>
+        <li> The idea is to generate an abstract 3D feature from random noise. </li>
+        <li> This feature is then projected to images from different viewpoints with a learned rendering </li>
+        <li> The rendering can also be seen as a function that learns to "decode" the abstract features into an image </li>
+        <li> We see that this approach achieves quite high image fidelity </li>
+        <li> However, our experiments show that due to learnable parameters in the projection the generated images lack multi-view consistency </li>
+		<li> We test the multi-view consistency by feeding several generated images of the same instance to a multi-view-stereo algorithm named COLMAP to reconstruct the object in 3D </li>
+        <li> As you can see in this slide, the reconstruction from the generated images does not faithfully represent the 3D car </li>
+    </ul>
+</aside>

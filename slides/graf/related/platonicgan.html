@@ -1,0 +1,33 @@
+<!-- .slide: class="layout-2x1" -->
+
+## 3D Representations
+
+#### 3D Shape with Volumetric Rendering
+
+<div class="column-1 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <div class="flex-col">
+        <img class="img-inline" style="vertical-align: middle" width=1500px src="gfx/related/teaser_pgan.svg" />
+        <div class="cite" style="padding-top: 1em">PlatonicGAN [Henzler et al., ICCV 2019]</div>
+    </div>
+    <div class="flex-col">
+        <video muted data-autoplay loop data-src="video/related/teaser_pgan.mp4" width=100% height=100% style="position: relative; top: -15%;"></video>
+    </div>
+</div>
+
+<div class="column-2 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+    <ul class="pro-contra" style="padding-left: 2em">
+        <li class="pro"> Multi-view consistent </li>
+        <li class="contra"> Low image fidelity, high memory consumption </li>
+    </ul>
+</div>
+
+<aside class="notes">
+	<ul>
+		<li> Another work is PlatonicGAN. </li>
+        <li> Instead of an abstract 3D feature they directly generate the 3D object from random noise. </li>
+        <li> This allows replace the learned projection with a volumetric rendering that does not contain any learnable parameters </li>
+        <li> As shown by the COLMAP reconstruction, this leads to multi-view consistent images </li>
+        <li> However, in this approach the 3D object is represented on coarse voxel grid </li>
+        <li> This results in visible artifacts. Further the memory footprint of the representation grows cubically with image size and thus prevents method to scale to high resolution </li>
+    </ul>
+</aside>

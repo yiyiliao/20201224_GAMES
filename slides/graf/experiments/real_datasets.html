@@ -1,0 +1,38 @@
+<!-- .slide: class="layout-1x1" -->
+
+## Experiments
+
+#### Real-World Datasets
+
+<div class="column-1">
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 0.1em;">
+        <img class="img-inline" width=28% src="gfx/results/real_cats.svg" />
+        <video muted data-autoplay loop data-src="video/results/cats_64.mp4" width=50% height=50% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 0.1em;">
+        <img class="img-inline" width=28% src="gfx/results/real_birds.svg" />
+        <video muted data-autoplay loop data-src="video/results/cub_64.mp4" width=50% height=50% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 1em;">
+        <div style="text-align: left; font-size: 40px; flex-basis: 600px"> Training Images </div>
+        <div style="text-align: left; font-size: 40px; flex-basis: 420px"> $ 64 \times 64 $</div>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 0.1em;">
+        <img class="img-inline" width=28% src="gfx/results/real_faces.svg" />
+        <video muted data-autoplay loop data-src="video/results/celebAHQ_256.mp4" width=50% height=50% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 1em;">
+        <div style="text-align: left; font-size: 40px; flex-basis: 600px"> Training Images </div>
+        <div style="text-align: left; font-size: 40px; flex-basis: 420px"> $ 256 \times 256 $</div>
+    </div>
+</div>
+
+<aside class="notes">
+	<ul>
+		<li> Now we have seen many nice results on these synthetic cars - but the question is: does our approach also work on real world data? </li>
+        <li> On the left we show some of the training images. </li>
+        <li> On the right we show generated images by our model </li>
+        <li> We see, that our model can synthesize reasonable images with good multi-view consistency for cat faces, birds and human faces. </li>
+        <li> However, as this task is quite challenging we also observe some failure cases. </li>
+     </ul>
+</aside>

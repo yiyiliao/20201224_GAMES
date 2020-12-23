@@ -1,0 +1,68 @@
+<!-- .slide: class="layout-1x2" -->
+
+## Failure Cases
+
+
+<div class="column-1">
+    <div class="flex-row" style="justify-content: flex-start flex-end flex-end; align-items: center; margin-bottom: 2em;">
+        <p style="text-align: left; font-size: 50px"> White artifacts </p>
+        <video muted data-autoplay loop data-src="video/results/cub_64_failure_rgb.mp4" width=25% height=25% style="position: relative; top: -10%;"></video>
+        <video muted data-autoplay loop data-src="video/results/cub_64_failure_depth.mp4" width=25% height=25% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end flex-end; align-items: center; margin-bottom: 2em;">
+        <p style="text-align: left; font-size: 50px"> Inward facing <br> depth </p>
+        <video muted data-autoplay loop data-src="video/results/cats_64_failure_rgb.mp4" width=25% height=25% style="position: relative; top: -10%;"></video>
+        <video muted data-autoplay loop data-src="video/results/cats_64_failure_depth.mp4" width=25% height=25% style="position: relative; top: -10%;"></video>
+    </div>
+</div>
+
+<div class="column-2">
+</div>
+
+---
+
+<!-- .slide: class="layout-1x2" -->
+
+## Failure Cases
+
+<div class="column-1">
+    <div class="flex-row" style="justify-content: flex-start flex-end flex-end; align-items: center; margin-bottom: 2em;">
+        <p style="text-align: left; font-size: 50px"> White artifacts </p>
+        <video muted data-autoplay loop data-src="video/results/cub_64_failure_rgb.mp4" width=25% height=25% style="position: relative; top: -10%;"></video>
+        <video muted data-autoplay loop data-src="video/results/cub_64_failure_depth.mp4" width=25% height=25% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end flex-end; align-items: center; margin-bottom: 2em;">
+        <p style="text-align: left; font-size: 50px"> Inward facing <br> depth </p>
+        <video muted data-autoplay loop data-src="video/results/cats_64_failure_rgb.mp4" width=25% height=25% style="position: relative; top: -10%;"></video>
+        <video muted data-autoplay loop data-src="video/results/cats_64_failure_depth.mp4" width=25% height=25% style="position: relative; top: -10%;"></video>
+    </div>
+</div>
+
+
+<div class="column-2">
+    <div class="emphbox" width=80% style="text-align: center">
+        <div style="text-align: left;"> More complex real world data </div>
+    	<ul>
+    		<li> Incorporate depth supervision </li>
+    		<li> Disentanglement</li>
+    	</ul>
+    </div>
+</div>
+
+<aside class="notes">
+	<ul>
+		<li> The birds dataset does not contain many views from the back of the bird, so our model does not really learn how the back of a bird looks like. </li>
+        <li> Note, it still adheres to the camera pose, but it learns to cheat by putting a white block on the bird's back to mask out the backside view.
+        This can be seen particlarly well in the generated depth map.</li>
+        <li> While the images for the cat faces look reasonable, looking at the depth reveals another problem of our method.
+        Black indicates a small depth, while yellow indicates points far away from the camera. Hence, we can see that the cat face is actually pointing inward.
+            Interestingly, this is hard to see just from the RGB-images, indicating that for small angular variation in the training data depth prediction can be quite ambiguous.
+        </li>
+        <li> The question is: How can we resolve these problems and extend our approach to more complex real world data?
+        One idea is to incorporate depth maps into training. The ground truth depth could for example be obtained using stereo depth estimation.
+            Further, recent work suggests that incorporating prior knowledge about symmetries of the objects might provide helpful cues to the network.
+            And lastly, it would be interesting extend our approach such that it can explicitly model the lighting of the scene.
+        </li>
+
+     </ul>
+</aside>

@@ -1,0 +1,132 @@
+
+<!-- .slide: class="layout-1x1" -->
+
+<div class="column-1 flex-col">
+    <center><h2>Can we learn a simulation tool from 2D images?</h2></center>
+</div>
+<div style="position: absolute; bottom: 0px; left: 0px; font-size:30px"> Liao, Schwarz, Mescheder, Geiger: Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis. CVPR, 2020</div>
+
+---
+
+<!-- .slide: class="layout-1x1" -->
+
+## Goal 
+
+#### 3D Controllable Image Synthesis
+
+<!-- <div class="column-1" style="height: 700px">
+    <iframe width=80% height=80% src="https://www.youtube.com/embed/8BW4BLe-j0s?autoplay=1&loop=1&playlist=8BW4BLe-j0s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>-->
+<!-- <div class="column-1 flex-row">
+    <video data-autoplay loop src="gfx/results/car/cam_azimuth.mp4" style="object-fit: cover; width:600px; height: 600px;"></video> 
+    <video data-autoplay loop src="gfx/results/car/cam_trans_x.mp4" style="object-fit: cover; width:600px; height: 600px;"></video> 
+</div> -->
+
+<div class="column-1 flex-row">  
+    <div style="margin-right: -3em">
+    <ul style="padding-left: 2em">
+	    <li class="fragment">Learning a <b>generative image model</b></li>
+        <li class="fragment">With  <b>controllable 3D</b> factors: </li>
+            <ul  class="fragment" style="padding-left: 2em">
+                <li> Object shape </li>
+                <li> Object pose </li>
+                <li> Camera viewpoint </li>
+            </ul>
+        <li class="fragment">Learn from <b>2D observations</b> (unposed images) </li>
+        <li class="fragment"><b>No supervision</b> <br> (segmentation, depth, pose) </li>
+    </ul>
+    </div>
+    <div style="margin-left: 3em"> <img src="gfx/motivation/pipeline_small.png" width="50%"> </div>
+</div>
+
+<aside class="notes">
+	1. application of image synthesis: VR, data augmentatation
+	2. a key property of image synthesis: 3D controllability: camera poses; manipulation of individual elements
+</aside>
+
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Generative Models 
+
+#### Classical Rendering Pipeline
+
+<div class="column-1 flex-row">
+    <img src="gfx/motivation/pipeline_comparison_1_classical.png" width="90%">
+    <video data-autoplay loop src="gfx/motivation/pipeline_comparison_1_classical.mp4" width=100% style="position:absolute; left:33%; top:36%; z-index:1; height: 150px;"></video>
+</div>
+
+<div class="column-2 flex-row" style="justify-content: flex-start; align-items: flex-start; margin-left: 4em; margin-top: 1em">
+    <ul class="pro-contra" style="padding-left: 2em">
+            <li class="pro fragment">3D factors can be controlled</li>
+            <li class="contra fragment">Expensive 3D content creation</li>
+    </ul>
+</div>
+
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Generative Models 
+
+#### 2D Generative Models
+
+<div class="column-1 flex-row">
+    <img src="gfx/motivation/pipeline_comparison_2_vanillagan.png" width="90%">
+    <video data-autoplay loop src="gfx/motivation/pipeline_comparison_2_vanillagan_2.mp4" width=100% style="position:absolute; left:33%; top:36%; z-index:1; height: 150px;"></video>
+</div>
+
+
+<div class="column-2 flex-row" style="justify-content: flex-start; align-items: flex-start; margin-left: 4em; margin-top: 1em">
+    <ul class="pro-contra" style="padding-left: 2em">
+            <li class="pro fragment">Unsupervised learning from  2D images</li>
+	    <li class="contra fragment">3D factors cannot be controlled </li>
+    </ul>
+</div>
+
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Generative Models 
+
+#### Our approach
+
+<div class="column-1 flex-row">
+    <img src="gfx/motivation/pipeline_comparison_3_ours.png" width="90%">
+    <video data-autoplay loop src="gfx/motivation/pipeline_comparison_3_ours.mp4" width=100% style="position:absolute; left:33%; top:36%; z-index:1; height: 150px;"></video>
+</div>
+
+<div class="column-2 flex-row" style="justify-content: flex-start; align-items: flex-start; margin-left: 4em; margin-top: 1em">
+    <ul class="pro-contra" style="padding-left: 2em">
+            <li class="pro fragment">3D factors can be controlled</li>
+            <li class="pro fragment">Unsupervised learning from  2D images</li>
+            <!--<li class="pro fragment">Unsupervised, disentangled 3D representation learning</li>-->
+    </ul>
+</div>
+
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Motivation 
+
+#### Ours
+
+<div class="column-1 flex-row">
+    <img src="gfx/motivation/pipeline_comparison_3_ours.png" width="90%">
+    <video data-autoplay loop src="gfx/motivation/pipeline_comparison_3_ours.mp4" width=100% style="position:absolute; left:33%; top:36%; z-index:1; height: 150px;"></video>
+</div>
+
+<div class="column-2">
+    <div class="emphbox flex-row" width=80% style="margin-left: 5em; margin-right: 5em; align-items: flex-start">
+	    <div> <strong>Idea:</strong> </div>
+	    <div> Learning the image generation process <br> jointly in 3D and 2D space </div>
+    </div>
+</div>
+

@@ -1,0 +1,35 @@
+<!-- .slide: class="layout-1x1" -->
+
+## Experiments
+
+#### Comparison to Baselines
+
+<div class="column-1">
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 0.7em;">
+        <div style="text-align: left; flex-basis: 350px"> PlatonicGAN </div>
+        <video muted data-autoplay loop data-src="video/results/carla_PlatonicGAN_64.mp4" width=50% height=50% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 0.7em;">
+        <div style="text-align: left; flex-basis: 350px"> HoloGAN </div>
+        <video muted data-autoplay loop data-src="video/results/carla_HoloGAN_64.mp4" width=50% height=50% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 0.7em;">
+        <div style="text-align: left; flex-basis: 350px"> Ours </div>
+        <video muted data-autoplay loop data-src="video/results/carla_64_rotonly.mp4" width=50% height=50% style="position: relative; top: -10%;"></video>
+    </div>
+    <div class="flex-row" style="justify-content: flex-start flex-end; align-items: center; margin-bottom: 0.7em;">
+        <div style="text-align: left; flex-basis: 0px"> &nbsp; </div>
+        <div style="text-align: center; font-size: 40px"> $ 64 \times 64 $</div>
+    </div>
+</div>
+
+<aside class="notes">
+	<ul>
+		<li> We first compare to the baselines on image resolution 64 by 64 </li>
+        <li> All methods learn to disentangle camera pose and object identity </li>
+        <li> However, we see artifacts in both PlatonicGAN and HoloGAN degrading the image fidelity </li>
+   		<li> Relatively small images - How do these methods scale to higher resolution? </li>
+        <li> For PlatonicGAN the memory footprint of the representation grows cubically with image size so it becomes very memory intensive for larger images.
+        Therefore we only conducted experiments for HoloGAN and our approach on higher resolution.</li>
+     </ul>
+</aside>

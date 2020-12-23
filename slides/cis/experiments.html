@@ -1,0 +1,320 @@
+<!-- .slide: class="layout-1x1" -->
+
+## Datasets
+
+<div class="column-1 flex-row">
+    <div class="flex-col">
+        <div class="gallery-img">
+                <div> <img src="gfx/dataset/car_0/01.png" width=125%> </div>
+                <div> <img src="gfx/dataset/car_0/02.png" width=125%> </div>
+                <div> <img src="gfx/dataset/car_0/03.png" width=125%> </div>
+                <div> <img src="gfx/dataset/car_0/04.png" width=125%> </div>
+        </div>
+    <div> <p>Car w/o BG</p> </div>
+    </div>
+    <div class="flex-col">
+        <div class="gallery-img">
+                <div> <img src="gfx/dataset/car_1/01.png" width=125%> </div>
+                <div> <img src="gfx/dataset/car_1/02.png" width=125%> </div>
+                <div> <img src="gfx/dataset/car_1/03.png" width=125%> </div>
+                <div> <img src="gfx/dataset/car_1/04.png" width=125%> </div>
+        </div>
+        <div> <p>Car with BG</p> </div>
+    </div>
+    <div class="flex-col">
+        <div class="gallery-img">
+                <div> <img src="gfx/dataset/indoor/01.png" width=125%> </div>
+                <div> <img src="gfx/dataset/indoor/02.png" width=125%> </div>
+                <div> <img src="gfx/dataset/indoor/03.png" width=125%> </div>
+                <div> <img src="gfx/dataset/indoor/04.png" width=125%> </div>
+        </div>
+        <div> <p>Indoor</p> </div>
+    </div>
+    <div class="flex-col">
+        <div class="gallery-img">
+                <div> <img src="gfx/dataset/fruit/01.png" width=125%> </div>
+                <div> <img src="gfx/dataset/fruit/02.png" width=125%> </div>
+                <div> <img src="gfx/dataset/fruit/03.png" width=125%> </div>
+                <div> <img src="gfx/dataset/fruit/04.png" width=125%> </div>
+        </div>
+        <div> <p> Fruit</p> </div>
+    </div>
+</div>
+
+
+---
+
+<!-- .slide: class="layout-1x2" -->
+
+## Experiments
+
+#### Baselines
+
+<div class="column-1" style="margin-left: 3em">
+    <div class="textbox">
+	<div class="title">Layout2Im</div>
+	<div class="cite">[Zhao et al., CVPR 2019]</div>
+	<ul style="font-size: .8em;">
+        <li class="fragment">Only 2D translation control, requires 2D bounding box supervision</li>
+        <li class="fragment">Fails to disentangle object identity and pose</li>
+	</ul>
+    </div>
+</div>
+
+
+<div class="column-2">
+    <div class="gallery">
+	    <div> <video data-autoplay loop src="gfx/results/layout2im/translate_0001_0000.gif.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/layout2im/translate_0001_0002.gif.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/layout2im/translate_0001_0004.gif.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/layout2im/translate_0002_0002.gif.mp4"></video> </div>
+    </div>
+</div>
+
+---
+
+<!-- .slide: class="layout-1x2" -->
+
+## Experiments
+
+#### Baselines
+
+<div class="column-1" style="margin-left: 3em">
+    <div class="textbox">
+	<div class="title">Ours 2D</div>
+	<div class="cite">Replace 3D primitives with 2D primitives</div>
+	<ul style="font-size: .8em;">
+		<li class="fragment">Only 2D translation control </li>
+        <li class="fragment">Fails to disentangle rotation and translation</li>
+	</ul>
+    </div>
+</div>
+
+
+<div class="column-2 flex-row">
+    <div class="gallery">
+	    <div> <video data-autoplay loop src="gfx/results/2dbaseline/trans_img_2.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/2dbaseline/trans_img_5.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/2dbaseline/trans_img_10.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/2dbaseline/trans_img_13.mp4"></video> </div>
+    </div>
+</div>
+
+---
+
+<!-- .slide: class="layout-1x2" -->
+
+## Experiments
+
+#### Ours: Object Translation
+
+<div class="column-1 flex-row" style="justify-content: flex-end; align-items: center; margin-bottom: 2em">
+    <video data-autoplay loop src="gfx/results/car/cam_trans_x.mp4" style="object-fit: cover; width:600px; height: 600px;"></video> 
+</div>
+
+<div class="column-2 flex-row">
+    <div class="gallery">
+	    <div> <video data-autoplay loop src="gfx/results/car/x_img_22.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/x_img_0.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/x_img_20.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/x_img_19.mp4"></video> </div>
+    </div>
+</div>
+
+---
+
+
+<!-- .slide: class="layout-1x2" -->
+
+## Experiments
+
+#### Ours: Object Translation
+
+
+<div class="column-1 flex-row" style="justify-content: flex-end; align-items: center; margin-bottom: 2em">
+    <video data-autoplay loop src="gfx/results/car/cam_trans_y.mp4" style="object-fit: cover; width:600px; height: 600px;"></video> 
+</div>
+
+<div class="column-2 flex-row">
+    <div class="gallery">
+	    <div> <video data-autoplay loop src="gfx/results/car/y_img_22.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/y_img_0.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/y_img_20.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/y_img_19.mp4"></video> </div>
+    </div>
+</div>
+
+---
+
+<!-- .slide: class="layout-1x2" -->
+
+## Experiments
+
+#### Ours: Camera Rotation 
+
+
+<div class="column-1 flex-row" style="justify-content: flex-end; align-items: center; margin-bottom: 2em">
+    <video data-autoplay loop src="gfx/results/car/cam_azimuth.mp4" style="object-fit: cover; width:600px; height: 600px;"></video> 
+</div>
+
+<div class="column-2 flex-row">
+    <div class="gallery">
+	    <div> <video data-autoplay loop src="gfx/results/car/azimuth_img_22.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/azimuth_img_0.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/azimuth_img_20.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/azimuth_img_19.mp4"></video> </div>
+    </div>
+</div>
+
+---
+
+<!-- .slide: class="layout-1x2" -->
+
+## Experiments
+
+#### Ours: Camera Rotation 
+
+
+<div class="column-1 flex-row" style="justify-content: flex-end; align-items: center; margin-bottom: 2em">
+    <video data-autoplay loop src="gfx/results/car/cam_polar.mp4" style="object-fit: cover; width:600px; height: 600px;"></video> 
+</div>
+
+<div class="column-2 flex-row">
+    <div class="gallery">
+	    <div> <video data-autoplay loop src="gfx/results/car/polar_img_22.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/polar_img_0.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/polar_img_20.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/car/polar_img_19.mp4"></video> </div>
+    </div>
+</div>
+
+---
+
+<!-- .slide: class="layout-1x2" -->
+
+## Experiments
+
+#### Ours: Camera Rotation
+
+<div class="column-1 flex-row" style="justify-content: flex-end; align-items: center; margin-bottom: 2em">
+    <video data-autoplay loop src="gfx/results/indoor/cam_azimuth.mp4" style="object-fit: cover; width:600px; height: 600px;"></video> 
+</div>
+
+<div class="column-2 flex-row">
+    <div class="gallery">
+	    <div> <video data-autoplay loop src="gfx/results/indoor/azimuth_img_16.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/indoor/azimuth_img_2.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/indoor/azimuth_img_24.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/indoor/azimuth_img_30.mp4"></video> </div>
+    </div>
+</div>
+
+---
+
+<!-- .slide: class="layout-1x2" -->
+
+## Experiments
+
+#### Ours: Object Translation
+
+<div class="column-1 flex-row" style="justify-content: flex-end; align-items: center; margin-bottom: 2em">
+    <video data-autoplay loop src="gfx/results/fruit/cam_trans_z.mp4" style="object-fit: cover; width:600px; height: 600px;"></video> 
+</div>
+
+<div class="column-2 flex-row">
+    <div class="gallery">
+	    <div> <video data-autoplay loop src="gfx/results/fruit/z_img_4.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/fruit/z_img_18.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/fruit/x_img_25.mp4"></video> </div>
+	    <div> <video data-autoplay loop src="gfx/results/fruit/x_img_5.mp4"></video> </div>
+    </div>
+</div>
+
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Ablation Study 
+
+#### What is a good 3D representation?
+
+<div class="column-1 flex-col" style="font-size: 0.8em;">
+  <table width="90%" border="0" align="left" cellpadding="0" cellspacing="0">
+    <col style="width:30%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:10%"><col style="width:10%"><col style="width:10%">
+    <thead>
+    <tr> <th>         </th> <th>FID</th> <th>FID$_{\mathbf t}$</th> <th>FID$_{\mathbf R}$</th>  <th>FID$_{i}$</th> <th>$\mathbf{X}$</th> <th>$\mathbf{A}'$</th> <th>$\hat{\mathbf{I}}$</th>  </tr>
+    <tr> <td> Vanilla GAN </td> <td>50 </td> <td>--               </td> <td>--               </td>  <td>41       </td> <td></td> <td></td> <td></td> </tr>
+    <tr> <td> <b>Point cloud</b>     </td> <td>38 </td> <td>43               </td> <td>44               </td>  <td>66       </td>  
+        <td> <img src="gfx/ablation/point32_16_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point32_16_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point32_16_p2.png" width="100" height="100"> </td>  </tr>
+    <tr> <td> <b>Cuboid</b>  </td> <td>38 </td> <td>45               </td> <td>45               </td>  <td>60       </td> 
+        <td> <img src="gfx/ablation/bbox7_11_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/bbox7_11_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/bbox7_11_p2.png" width="100" height="100"> </td>  </tr>
+    <tr> <td> <b>Sphere</b>  </td> <td>33 </td> <td>45               </td> <td>45               </td>  <td>53       </td>  
+        <td> <img src="gfx/ablation/sphere1_16_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/sphere1_16_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/sphere1_16_p2.png" width="100" height="100"> </td> </tr>
+</table>
+</div>
+<div class="column-2 flex-row" style="margin:10px; justify-content: flex-start; margin-left: 2em">
+<ul>
+    <li> Similar FID scores $\Rightarrow$ concept of joint 3D-2D representation is more important</li>
+    <li> Spheres perform best, suffer less from surface discontinuities compared to cuboids</li>
+</ul>
+</div>
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Ablation Study 
+
+#### What is the advantage of disentanglement? 
+
+<div class="column-1 flex-col" style="font-size: 0.8em;">
+  <table width="90%" border="0" align="left" cellpadding="0" cellspacing="0">
+    <col style="width:30%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:10%"><col style="width:10%"><col style="width:10%">
+    <thead>
+    <tr> <th>         </th> <th>FID</th> <th>FID$_{\mathbf t}$</th> <th>FID$_{\mathbf R}$</th>  <th>FID$_{i}$</th> <th>$\mathbf{X}$</th> <th>$\mathbf{A}'$</th> <th>$\hat{\mathbf{I}}$</th>  </tr>
+    <tr> <td> Vanilla GAN </td> <td>50 </td> <td>--               </td> <td>--               </td>  <td>41       </td> <td></td> <td></td> <td></td> </tr>
+    <tr> <td> Point cloud     </td> <td>38 </td> <td>43               </td> <td>44               </td>  <td>66       </td>  
+        <td> <img src="gfx/ablation/point32_16_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point32_16_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point32_16_p2.png" width="100" height="100"> </td>  </tr>
+    <tr> <td> Cuboid  </td> <td>38 </td> <td>45               </td> <td>45               </td>  <td>60       </td> 
+        <td> <img src="gfx/ablation/bbox7_11_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/bbox7_11_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/bbox7_11_p2.png" width="100" height="100"> </td>  </tr>
+    <tr> <td> Sphere  </td> <td>33 </td> <td>45               </td> <td>45               </td>  <td>53       </td>  
+        <td> <img src="gfx/ablation/sphere1_16_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/sphere1_16_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/sphere1_16_p2.png" width="100" height="100"> </td> </tr>
+    <tr> <td> <b>Single primitive</b>  </td> <td>30 </td> <td>38               </td> <td>44               </td>  <td>--       </td>  
+        <td> <img src="gfx/ablation/point96_27_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point96_27_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point96_27_p2.png" width="100" height="100"> </td> </tr>
+</table>
+</div>
+<div class="column-2">
+    <img src="gfx/ablation/single_primitive_rot.png" width=1000vw>
+</div>
+
+---
+
+<!-- .slide: class="layout-2x1" -->
+
+## Ablation Study 
+
+#### Can we learn the 3D model directly? 
+
+<div class="column-1 flex-col" style="font-size: 0.8em;">
+  <table width="90%" border="0" align="left" cellpadding="0" cellspacing="0">
+    <col style="width:30%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:10%"><col style="width:10%"><col style="width:10%">
+    <thead>
+    <tr> <th>         </th> <th>FID</th> <th>FID$_{\mathbf t}$</th> <th>FID$_{\mathbf R}$</th>  <th>FID$_{i}$</th> <th>$\mathbf{X}$</th> <th>$\mathbf{A}'$</th> <th>$\hat{\mathbf{I}}$</th>  </tr>
+    <tr> <td> Vanilla GAN </td> <td>50 </td> <td>--               </td> <td>--               </td>  <td>41       </td> <td></td> <td></td> <td></td> </tr>
+    <tr> <td> Point cloud     </td> <td>38 </td> <td>43               </td> <td>44               </td>  <td>66       </td>  
+        <td> <img src="gfx/ablation/point32_16_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point32_16_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point32_16_p2.png" width="100" height="100"> </td>  </tr>
+    <tr> <td> Cuboid  </td> <td>38 </td> <td>45               </td> <td>45               </td>  <td>60       </td> 
+        <td> <img src="gfx/ablation/bbox7_11_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/bbox7_11_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/bbox7_11_p2.png" width="100" height="100"> </td>  </tr>
+    <tr> <td> Sphere  </td> <td>33 </td> <td>45               </td> <td>45               </td>  <td>53       </td>  
+        <td> <img src="gfx/ablation/sphere1_16_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/sphere1_16_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/sphere1_16_p2.png" width="100" height="100"> </td> </tr>
+    <tr> <td> Single primitive  </td> <td>30 </td> <td>38               </td> <td>44               </td>  <td>--       </td>  
+        <td> <img src="gfx/ablation/point96_27_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point96_27_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/point96_27_p2.png" width="100" height="100"> </td> </tr>
+    <tr> <td> <b>Textured mesh</b>  </td> <td>69 </td> <td>71               </td> <td>74               </td>  <td> 69       </td>  
+        <td> <img src="gfx/ablation/sphere2_12_p0.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/sphere2_12_p1.png" width="100" height="100"> </td> <td> <img src="gfx/ablation/sphere2_12_p2.png" width="100" height="100"> </td> </tr>
+</table>
+</div>
+<div class="column-2">
+</div>
+
+
